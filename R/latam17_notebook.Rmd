@@ -1,7 +1,18 @@
-#// Project - Visualizing HealthQuality in Colombia
-#@author: Laura Gabrysiak
-# -- 'utf-8' --
-#%>% Setup
+---
+title: "Datathlon: Health index in Colombia (2005 - 2010)"
+output: html_notebook
+---
+---
+title: "Untitled"
+author: "Laura Gabrysiak"
+date: "6/29/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```
 rm(list = ls(all.names = TRUE))
 options(encoding = 'UTF-8')
 #// Load libraries
@@ -23,11 +34,13 @@ View(unique(ind.salud[,c('idindicador','nomindicador')]))
 
 #// Measure NA ratio
 nacount <- sort(unlist(lapply(ind.salud, function(x) sum(is.na(x))/nrow(ind.salud))))
+
 barplot(sort(nacount), ylab = 'Number of NAs')
 
 #// ind: 
 ind <- data.frame(ind.salud[,(2:9)])
 ind$nomindicador <- NULL; ind$nomunidad <- NULL; ind$idunidad <- NULL
+
 #// Years - cleaning
 years <- subset(ind.salud, select = grep('yea+', names(ind.salud))); 
 names(years) = sub('yea','',names(years)); years.rel <- years[16:21]
@@ -60,29 +73,17 @@ nacount.2 <- sort(unlist(lapply(ind, function(x) sum(is.na(x))/nrow(ind)))); bar
 COL.ind <- subset(ind, ind$iddepto == 170); COL.ind$idmpio <- NULL; COL.ind$nommpio <- NULL; 
 unique(COL.ind$idindicador) #// all indicators are given
 # // Several instances of the same var and year thus a merge is requiered
-# COL.ind.all <- as.data.frame(aggregate(COL.ind[4:9], by=list(COL.ind$idindicador),
-#                      FUN = mean, 
-#                      na.rm=TRUE)) 
-# COL.ind.all[is.nan(COL.ind.all)] <- NA
-# for (i in 1:nrow(COL.ind.all)){
-#   COL.ind.all$mean[i] <- mean(COL.ind.all[2:7, i], 
-#                              na.rm = TRUE)  
-# }
+COL.ind.all <- as.data.frame(aggregate(COL.ind[4:9], by=list(COL.ind$idindicador),
+                     FUN = mean, 
+                     na.rm=TRUE)) 
+COL.ind.all[is.nan(COL.ind.all)] <- NA
+for (i in 1:nrow(COL.ind.all)){
+  COL.ind.all$mean[i] <- mean(COL.ind.all[2:7, i], 
+                             na.rm = TRUE)  
+}
 
-# Level 1 + 2 // get rid of all national data
-library(tidyr)
-
+# Level 1 + 2
 ind <- subset(ind, ind$iddepto < 170)
-
-ind.reshape <- gather(ind, year, idindicador, '2005', '2006', '2007', '2008', '2009', '2010')
-ind.reshape <- as.data.table(ind.reshape)
-
-
-
-
-
-
-
 
 
 #Set up map
@@ -106,5 +107,8 @@ mapColDep <- ggplot() +
   scale_y_continuous(limits=c(-5,13) )
 
 mapColDep
+```
 
-#ggsave(mapColDep, file = 'mapColDep.png',width = 5, height = 4.5, type = 'cairo-png')
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).

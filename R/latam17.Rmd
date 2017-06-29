@@ -1,7 +1,14 @@
-#// Project - Visualizing HealthQuality in Colombia
-#@author: Laura Gabrysiak
-# -- 'utf-8' --
-#%>% Setup
+---
+title: "Untitled"
+author: "Laura Gabrysiak"
+date: "6/29/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```
 rm(list = ls(all.names = TRUE))
 options(encoding = 'UTF-8')
 #// Load libraries
@@ -60,22 +67,17 @@ nacount.2 <- sort(unlist(lapply(ind, function(x) sum(is.na(x))/nrow(ind)))); bar
 COL.ind <- subset(ind, ind$iddepto == 170); COL.ind$idmpio <- NULL; COL.ind$nommpio <- NULL; 
 unique(COL.ind$idindicador) #// all indicators are given
 # // Several instances of the same var and year thus a merge is requiered
-# COL.ind.all <- as.data.frame(aggregate(COL.ind[4:9], by=list(COL.ind$idindicador),
-#                      FUN = mean, 
-#                      na.rm=TRUE)) 
-# COL.ind.all[is.nan(COL.ind.all)] <- NA
-# for (i in 1:nrow(COL.ind.all)){
-#   COL.ind.all$mean[i] <- mean(COL.ind.all[2:7, i], 
-#                              na.rm = TRUE)  
-# }
+COL.ind.all <- as.data.frame(aggregate(COL.ind[4:9], by=list(COL.ind$idindicador),
+                     FUN = mean, 
+                     na.rm=TRUE)) 
+COL.ind.all[is.nan(COL.ind.all)] <- NA
+for (i in 1:nrow(COL.ind.all)){
+  COL.ind.all$mean[i] <- mean(COL.ind.all[2:7, i], 
+                             na.rm = TRUE)  
+}
 
-# Level 1 + 2 // get rid of all national data
-library(tidyr)
-
+# Level 1 + 2
 ind <- subset(ind, ind$iddepto < 170)
-
-ind.reshape <- gather(ind, year, idindicador, '2005', '2006', '2007', '2008', '2009', '2010')
-ind.reshape <- as.data.table(ind.reshape)
 
 
 
@@ -106,5 +108,4 @@ mapColDep <- ggplot() +
   scale_y_continuous(limits=c(-5,13) )
 
 mapColDep
-
-#ggsave(mapColDep, file = 'mapColDep.png',width = 5, height = 4.5, type = 'cairo-png')
+```
