@@ -11,7 +11,7 @@ library(scales)
 
 setwd('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp')
 #// Read map
-ohsCol2 <- readShapeSpatial("COL_adm2.shp")
+ohsCol2 <- readShapeSpatial("COL_adm1.shp")
 ohsColI2 <- fortify(ohsCol2)
 #//Create variable
 grupo2 <- data.frame(id = unique(ohsColI2[ , c("id")]))

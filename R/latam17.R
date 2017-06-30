@@ -81,7 +81,9 @@ library(tidyr)
 #// Reshape data to 
 ind.rshp <- gather(ind, year, value, '2005', '2006', 
                    '2007', '2008', '2009', '2010')
+ind.rshp <- spread(ind.rshp,idindicador,value)
 ind.rshp <- as.data.table(ind.rshp)
+
 #write.csv2(ind.reshape, 'ind_transformed.csv')
 
 # // Level 1 - States:
@@ -100,22 +102,34 @@ id.gadm$NAME_2 <- stringi::stri_trans_general(id.gadm$NAME_2, 'Latin-ASCII')
 # 
 ind.rshp$idmpio <- id.gadm$ID_2[match(ind.rshp$nommpio, id.gadm$NAME_2)]
 
-#\\ Splitt by variables
+#\\ Splitt by variables (check reference table)
 unique(ind.rshp[,idindicador])
 test <- aggregate(data=ind.rshp, by = list(ind.rshp$idindicador), FUN )
 
 library(doBy)
-nacount.var <- sort(summaryBy(value+year+nommpio+idmpio+iddepto+nomdepto~idindicador,
+nacount.var <- summaryBy(value+year+nommpio+idmpio+iddepto+nomdepto~idindicador,
           data=ind.rshp,
           FUN=function(x) sum(is.na(x)),
-          keep.names=TRUE))
+          keep.names=TRUE)
 nacount.var <- as.data.frame(matrix(unlist(nacount.var),
     ncol=7, nrow=18, byrow=F, 
     dimnames = NULL)#list('idindicador','value','year','nommpio','idmpio','iddepto','nomdepto') 
     , stringsAsFactors=TRUE)
 nacount.var
-#// Population 
 
+#Sort by 2010
+
+
+
+#// Population 
+pop <- read_csv("~/Documents/GitHub/latam_datathlon_2017/data/pop.csv")
+pop$Departamento <- tolower(pop$Departamento); 
+pop$Departamento <- stringi::stri_trans_general(pop$Departamento, 'Latin-ASCII') 
+pop$Codigo <- id.gadm$ID_1[match(pop$Departamento, id.gadm$NAME_1)]
+pop <- gather(pop, year, popvalue, '2005', '2006', 
+                   '2007', '2008', '2009', '2010')
+#//Merge pop to ind.rshp
+merge.data.frame(ind.rshp)
 
 
 
