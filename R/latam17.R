@@ -49,8 +49,8 @@ ind$nomdepto[ind$iddepto == 88] <- 'san andres y providencia'
 ind$nomdepto[ind$iddepto == 11] <- 'bogota'
 ind$nomdepto[ind$iddepto == 170] <- 'colombia'
 ind$nomdepto[ind$iddepto == 54] <- 'norte de santander'
-ind$nomdepto[ind$iddepto == 75] <- '' #extranjeros case - change
-#d<-d[!(d$A=="B" & d$E==0),]
+#out <- subset(ind, ind$iddepto == 75)
+ind <- ind[!ind$iddepto == 75,]
 
 ind$nommpio <- tolower(ind$nommpio); 
 ind$nommpio <- stringi::stri_trans_general(ind$nommpio, 'Latin-ASCII')
@@ -58,7 +58,6 @@ ind$nommpio <- gsub("[  ]", ' ', ind$nommpio)
 ind$nommpio <- gsub("miriti - parana", 'miriti-parana', ind$nommpio)
 ind$nommpio <- gsub("[*]", '', ind$nommpio)
 head(ind)
-
 nacount.2 <- sort(unlist(lapply(ind, function(x) sum(is.na(x))/nrow(ind)))); barplot(nacount.2)
 
 #// setting up levels
@@ -82,17 +81,16 @@ library(tidyr)
 #// Reshape data to 
 ind.rshp <- gather(ind, year, value, '2005', '2006', 
                    '2007', '2008', '2009', '2010')
-
 ind.rshp <- as.data.table(ind.rshp)
 #write.csv2(ind.reshape, 'ind_transformed.csv')
 
 # // Level 1 - States:
 #  switch the id to standardize it to gadm
+#Refreence Table
 COL.gadm <- read_csv("~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm2.csv")
 id.gadm <- COL.gadm[5:8]
 id.gadm$NAME_1 <- tolower(id.gadm$NAME_1); 
 id.gadm$NAME_1 <- stringi::stri_trans_general(id.gadm$NAME_1, 'Latin-ASCII')
-# n.santander // 
 ind.rshp$iddepto <- id.gadm$ID_1[match(ind.rshp$nomdepto, id.gadm$NAME_1)]
 
 # // Level 2 - Municipalities:
@@ -101,6 +99,26 @@ id.gadm$NAME_2 <- tolower(id.gadm$NAME_2);
 id.gadm$NAME_2 <- stringi::stri_trans_general(id.gadm$NAME_2, 'Latin-ASCII') 
 # 
 ind.rshp$idmpio <- id.gadm$ID_2[match(ind.rshp$nommpio, id.gadm$NAME_2)]
+
+#\\ Splitt by variables
+unique(ind.rshp[,idindicador])
+test <- aggregate(data=ind.rshp, by = list(ind.rshp$idindicador), FUN )
+
+library(doBy)
+nacount.var <- sort(summaryBy(value+year+nommpio+idmpio+iddepto+nomdepto~idindicador,
+          data=ind.rshp,
+          FUN=function(x) sum(is.na(x)),
+          keep.names=TRUE))
+nacount.var <- as.data.frame(matrix(unlist(nacount.var),
+    ncol=7, nrow=18, byrow=F, 
+    dimnames = NULL)#list('idindicador','value','year','nommpio','idmpio','iddepto','nomdepto') 
+    , stringsAsFactors=TRUE)
+nacount.var
+#// Population 
+
+
+
+
 
 
 
