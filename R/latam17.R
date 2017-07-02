@@ -54,7 +54,8 @@ ind$nommpio <- gsub("[  ]", ' ', ind$nommpio)
 ind$nommpio <- gsub("miriti - parana", 'miriti-parana', ind$nommpio)
 ind$nommpio <- gsub("[*]", '', ind$nommpio)
 head(ind)
-nacount.2 <- sort(unlist(lapply(ind, function(x) sum(is.na(x))/nrow(ind)))); barplot(nacount.2)
+nacount.2 <- sort(unlist(lapply(ind, function(x) sum(is.na(x))/nrow(ind)))); 
+#barplot(nacount.2)
 rm(COL.ind,years,years.rel)
 
 #// Level 1 + 2 // get rid of all national data
@@ -91,8 +92,13 @@ pop$Departamento <- stringi::stri_trans_general(pop$Departamento, 'Latin-ASCII')
 pop$Codigo <- id.gadm$ID_1[match(pop$Departamento, id.gadm$NAME_1)]
 pop <- gather(pop, year, popvalue, '2005', '2006', 
               '2007', '2008', '2009', '2010')
-pop <- pop[c(1,3,4),]
 pop <- subset(pop, pop$year == '2010')
+pop$Codigo[pop$Departamento == 'bogota'] = 14
+#merge bogota + cundinamarca
+pop <- pop[,c(1,3,4)]
+pop <- aggregate(pop$popvalue, by = list(pop$Codigo), FUN = sum)
+colnames(pop)[1] <- 'id' ; colnames(pop)[2] <- 'pop' 
+
 #//Merge pop to ind.rshp
 #merge.data.frame(ind.rshp)
 
@@ -108,18 +114,25 @@ nacount.var <- as.data.frame(matrix(unlist(nacount.var),
                                     dimnames = NULL)
                              , stringsAsFactors=TRUE)
 nacount.var
+
 #// Select relevant variables for year 2010
-  #pcrparin (4)
-  #ttdnesti (13)
-  #cgrnacim (16)
-  #ctrmormt (2)
-  #pcrperca (9)
-  #pcrrncpn (15)
-  #rtrmorpu (5)
-  #ttdiesti (1)
+  #pcrparin (4)- Porcentaje partos institucionales
+  #ttdnesti (13) - Tasa de mortalidad estimada en menores de 5 años
+  #cgrnacim (16) - Número anual de nacimientos
+  #ctrmormt (2) - Mortalidad materna a 42 días
+  #pcrperca (9) - Porcentaje de partos por personal calificado
+  #pcrrncpn (15) - Porcentaje de nacidos vivos con cuatro o más consultas
+  #rtrmorpu (5) - Razón de mortalidad materna a 42 días
+  #ttdiesti (1) - Tasa de mortalidad infantil estimada
+ind.rshp.2010 <- subset(ind.rshp, ind.rshp$year == 2010)
+ind.rshp.2010$year <- NULL
+#municipalities
+# ind.rshp.2010 %>% spread(iddepto,
+#                          idindicador,
+#                           value)
 # VAR 4 ----------------------------------------------------------------------
 ind.var4 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrparin')
-  ind.var4 <- subset(ind.var4, ind.var4$year == 2010)
+  #ind.var4 <- subset(ind.var4, ind.var4$year == 2010)
   # Aggregate by state: (State ID -5)
   ind.var4.dep <- aggregate(ind.var4[,c(7)], list(ind.var4$iddepto), mean)
   colnames(ind.var4.dep)[1] <- 'id'
