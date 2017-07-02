@@ -14,18 +14,18 @@ source('latam17.R')
 COL.m.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm2.shp')
 COL.m.coord <- fortify(COL.m.data)
 COL.map <- merge(COL.m.coord, 
-                 ind.var1, 
+                 ind.var13, 
                  by = 'id')
 
 COL.d.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm1.shp')
 COL.d.coord <- fortify(COL.d.data)
 COL.map.d <- merge(COL.d.coord, 
-                   ind.var1, 
+                   ind.var13.dep, 
                    by = 'id')
 
 #// Visualize
 mapColDep <- ggplot() +
-  geom_polygon(data = COL.map.d,
+  geom_polygon(data = COL.map,
                inherit.aes = TRUE,
                aes(x = long, y = lat, group = group, fill = value),
                colour ='white',

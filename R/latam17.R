@@ -121,17 +121,45 @@ nacount.var
 ind.var4 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrparin')
 # VAR 13 ----------------------------------------------------------------------
 ind.var13 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdnesti')
+  ind.var13 <- subset(ind.var13, ind.var13$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var13.dep <- aggregate(ind.var13[,c(7)], list(ind.var13$iddepto), mean)
+  colnames(ind.var13.dep)[1] <- 'id'
+  ind.var13.dep$id =  ind.var13.dep$id -1
+  # By municipality
+  ind.var13 <- ind.var13[,c(4,6,7)]
+  ind.var13 <- ind.var13[,c(1,3)]
+  colnames(ind.var13)[1] <- 'id'
+  ind.var13$id =  ind.var13$id -1
 # VAR 16 ----------------------------------------------------------------------
+# /100000 - hwr no action taken
 ind.var16 <- subset(ind.rshp, ind.rshp$idindicador == 'cgrnacim')
-
+  ind.var16 <- subset(ind.var16, ind.var16$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var16.dep <- aggregate(ind.var16[,c(7)], list(ind.var16$iddepto), mean)
+  colnames(ind.var16.dep)[1] <- 'id'
+  ind.var16.dep$id =  ind.var16.dep$id -1
+  # By municipality
+  # NO IDs
 # VAR 2 ----------------------------------------------------------------------
 ind.var2 <- subset(ind.rshp, ind.rshp$idindicador == 'ctrmormt')
-
+  ind.var2 <- subset(ind.var2, ind.var2$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var2.dep <- aggregate(ind.var2[,c(7)], list(ind.var2$iddepto), mean)
+  colnames(ind.var2.dep)[1] <- 'id'
+  ind.var2.dep$id =  ind.var2.dep$id -1
+  # By municipality
+  # NO iDs
 # VAR 9 ----------------------------------------------------------------------
-ind.var9 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrperca')
-
+  ind.var9 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrperca')
+  ind.var9 <- subset(ind.var9, ind.var9$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var9.dep <- aggregate(ind.var9[,c(7)], list(ind.var9$iddepto), mean)
+  colnames(ind.var9.dep)[1] <- 'id'
+  ind.var9.dep$id =  ind.var9.dep$id -1
 # VAR 15 ----------------------------------------------------------------------
 ind.var15 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrrncpn')
+  ind.var15 <- subset(ind.var15, ind.var15$year == 2010)
   # mult by 10 to measure the % ratio
   ind.var15$value <- as.numeric(ind.var15$value) * 10
   # Aggregate by state: (State ID -5)
@@ -139,12 +167,7 @@ ind.var15 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrrncpn')
   colnames(ind.var15.dep)[1] <- 'id'
   ind.var15.dep$id =  ind.var15.dep$id -1
   #Group by municipality (MUN ID -1)
-  ind.var15 <- ind.var15[,c(4,6,7)]
-  ind.var15 <- ind.var15[ind.var15$year == 2010]
-  ind.var15 <- ind.var15[,c(1,3)]
-  colnames(ind.var15)[1] <- 'id'
-  ind.var15$id =  ind.var15$id -1
-
+  # No IDs
 # VAR 1 (%) ----------------------------------------------------------------------
 ind.var1 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdiesti')
   # mult by 10 to measure the % ratio
@@ -161,6 +184,6 @@ ind.var1 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdiesti')
   ind.var1$id =  ind.var1$id -1
   #ind.var1$value <- ind.var1$value/919.7000
   #ind.var1[ , "value"] <- runif(nrow(ind.var1), 0, 1)
-
+  
 # VAR 5 ----------------------------------------------------------------------
 ind.var5 <- subset(ind.rshp, ind.rshp$idindicador == 'rtrmorpu')
