@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Colombia.kml</name>
+    <description/>
+    <Style id="icon-503-DB4436-nodesc-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-503-DB4436-nodesc-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-503-DB4436-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-503-DB4436-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-503-DB4436-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>Rosy Thrush-Tanager</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.10826,11.12905,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sooty Grassfinch, Santa Marta</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.12288,11.14574,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coppery Emerald</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.09808,11.1219,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Foliage-gleaner</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.09856,11.11937,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blossomcrown Tienda</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07748,11.09632,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coppery Emerald (Peter)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07318,11.09339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rusty-breasted Antpitta</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07552,11.09686,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blossomcrown garden (first success)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.076,11.09672,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tienda overlook</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.08232,11.09624,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Foliage-gleaner (heard only)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07662,11.09434,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jardin</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.876492,5.659899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>RBAN - 25 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07439,11.09373,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Parakeet (lower elevation location)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.06031,11.10758,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Screech-Owl</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07139,11.09652,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07093,11.09486,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Parakeet</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.04714,11.1084,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador 2</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07047,11.0959,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SCST - likely Streak-capped Spinetail nest</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07111,11.10773,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta National Park El Dorado Lodge</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.072136,11.100831,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Santa Marta Screech-Owl 2</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.07307,11.09395,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SMBF</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.08235,11.09663,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rosy Thrush-Tanager (dipped on this one)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.10835,11.12997,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coastal Birding site</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.07862,11.43289,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Camarones</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.0666,11.40273,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Minca</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.119209,11.1416,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Black-backed Antbird</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.13517,11.15648,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Salamanca 21 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.6815,11.00557,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Romera 20 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.60098,6.12678,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Choco 17 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -76.40044,5.736,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tangaras Hummingbird Feeders 16 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -76.17734,5.81992,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>White-headed Wren 16 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -76.18214,5.80699,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Apical Flycatcher</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.860661,5.966049,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grayish Piculet 15 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.85893,5.96416,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grayish Piculet (dipped on it here)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.85496,5.93614,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cock-of-the-Rock 15 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.82085,5.5954,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yellow-eared Parrot (lowland flock) 15 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.77806,5.58054,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rose-breasted Grosbeak</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.78395,5.58236,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Red-hooded Tanager 14 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.794567,5.550616,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Munchiche Wood-wren 14 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.79397,5.54885,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yellow-eared Parrot hilltop overview 14 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.80299,5.53035,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>119 13 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.60267,5.38607,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>118 13 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.3283,4.99899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Los Nevados 13 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.35334,4.94696,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>117 13 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.35289,4.95616,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rio Blanco 11 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.43784,5.07353,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colombian Screech-Owl 10 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.577949,4.728472,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fuertes Parrot Reserve Gate 10 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.54234,4.28967,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fuertes Parrot Parking spot 10 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.54232,4.28473,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yellow-headed Manakin 9 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.08103,4.90212,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blue-billed Curassow 5 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.25539,6.04347,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cerulean Reserve 1 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.38417,6.86149,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jet Antbird 7 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.864959,5.093131,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Florida 1 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.14799,4.72964,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Victoria 8 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.92385,5.32696,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Libano 9 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.08112,4.92256,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Matorral Tapaculo 31 Oct 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.84124,4.73327,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mountain Grackle 2 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.36546,6.84902,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Niceforo's Wren 3 Nov 2010]]></name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.38313,6.86983,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>El Paujil 5 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.26137,6.04984,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>El Paujil Hilltop 5 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.251901,6.041571,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rufous Wren 5 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.26035,6.04702,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>South of Northern Screamer 4 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.454748,6.304878,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tolima Dove (dipped) 9 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -75.08175,4.923131,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Upper Magdelana Tapaculo 2 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.37779,6.84864,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yellow-browed Shrike-Vireo 4 Nov 2010</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.39603,6.87078,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chingaza National Park (Centre)</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -73.575439,4.594818,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mariquita - near Laguna del Hato</name>
+        <styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -74.916667,5.25,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
