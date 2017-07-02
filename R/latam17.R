@@ -119,6 +119,16 @@ nacount.var
   #ttdiesti (1)
 # VAR 4 ----------------------------------------------------------------------
 ind.var4 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrparin')
+  ind.var4 <- subset(ind.var4, ind.var4$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var4.dep <- aggregate(ind.var4[,c(7)], list(ind.var4$iddepto), mean)
+  colnames(ind.var4.dep)[1] <- 'id'
+  ind.var4.dep$id =  ind.var4.dep$id -1
+  # By municipality
+  ind.var4 <- ind.var4[,c(4,6,7)]
+  ind.var4 <- ind.var4[,c(1,3)]
+  colnames(ind.var4)[1] <- 'id'
+  ind.var4$id =  ind.var4$id -1
 # VAR 13 ----------------------------------------------------------------------
 ind.var13 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdnesti')
   ind.var13 <- subset(ind.var13, ind.var13$year == 2010)
@@ -127,10 +137,7 @@ ind.var13 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdnesti')
   colnames(ind.var13.dep)[1] <- 'id'
   ind.var13.dep$id =  ind.var13.dep$id -1
   # By municipality
-  ind.var13 <- ind.var13[,c(4,6,7)]
-  ind.var13 <- ind.var13[,c(1,3)]
-  colnames(ind.var13)[1] <- 'id'
-  ind.var13$id =  ind.var13$id -1
+  # NO IDs
 # VAR 16 ----------------------------------------------------------------------
 # /100000 - hwr no action taken
 ind.var16 <- subset(ind.rshp, ind.rshp$idindicador == 'cgrnacim')
@@ -187,3 +194,13 @@ ind.var1 <- subset(ind.rshp, ind.rshp$idindicador == 'ttdiesti')
   
 # VAR 5 ----------------------------------------------------------------------
 ind.var5 <- subset(ind.rshp, ind.rshp$idindicador == 'rtrmorpu')
+  ind.var5 <- subset(ind.var5, ind.var5$year == 2010)
+  # Aggregate by state: (State ID -5)
+  ind.var5.dep <- aggregate(ind.var5[,c(7)], list(ind.var5$iddepto), mean)
+  colnames(ind.var5.dep)[1] <- 'id'
+  ind.var5.dep$id =  ind.var5.dep$id -1
+  # By municipality
+  ind.var5 <- ind.var5[,c(4,6,7)]
+  ind.var5 <- ind.var5[,c(1,3)]
+  colnames(ind.var5)[1] <- 'id'
+  ind.var5$id =  ind.var5$id -1
