@@ -178,7 +178,7 @@ La población puede ser representada en número total o como proporción (ratio)
 
 #### Normalización de los Identificadores (IDs)
 
-Los ids de los datos procedentes del OpenData no coincidían con los de los datos geográficos de GADM por lo que una normalización de datos era requerida en este caso. Decidimos adaptarnos al formato de GADM ya que los archivos geográficos se regían por este estándar. Para normalizar los ids decidimos utilizar el nombre de los departamentos/municipios. Utilizando técnicas de minería de texto (Text Mining) (Expresiones regulares) Para ello utilizamos las librerias stringr y stringi para convertir todos los nombres a minuscula y normalizar nombres alternativos de algunos departamentos, por ejemplo: *n.santander / norte de santander / o s.andres / san andres / san andres y providencia* .) normalizamos los datos textuales de las dos fuentes de datos (OpenData y GADM) para crear una tabla de referencia. Otra dificultad estaba constituida por características lingüísticas del castellano por ejemplo: tildes. Para ello formateamos todo el texto de UTF-8 a _Latin-ASCII _. Otras normalizaciones fueron todo *indefinido | sin valor --> NA*. Ademas separamos los valores que eran a nivel nacional (Colombia, id = 170). 
+Los ids de los datos procedentes del OpenData no coincidían con los de los datos geográficos de GADM por lo que una normalización de datos era requerida en este caso. Decidimos adaptarnos al formato de GADM ya que los archivos geográficos se regían por este estándar. Para normalizar los ids decidimos utilizar el nombre de los departamentos/municipios. Utilizando técnicas de minería de texto (Text Mining) (Expresiones regulares) Para ello utilizamos las librerias stringr y stringi para convertir todos los nombres a minuscula y normalizar nombres alternativos de algunos departamentos, por ejemplo: (_n.santander - norte de santander_) o (_s.andres - san andres - san andres y providencia_). Normalizamos los datos textuales de las dos fuentes de datos (OpenData y GADM) para crear una tabla de referencia. Otra dificultad estuvo constituida por características lingüísticas del castellano por ejemplo: _tildes_ y otros caracteres espaciales. Para ello formateamos todo el texto de UTF-8 a _Latin-ASCII _. Otras normalizaciones que se hicieron fueron todo *indefinido | sin valor --> NA*. Ademas, separamos los valores que eran a nivel nacional (_Colombia, id = 170_) para solo analizar valores que estuviesen vinculados a departamentos o municipalidades. Aun despues de este proceso, experimentamos muchas dificultades a nivel de municipalidad ya que la normalizacion de las municipalidades (n = 1065) no resulto tan exitosa como los departamentos (n = 32). Muchas de las municipalidades no estaban incluidas en el directorio del GADM y por lo tanto no pudieron ser normalizadas. 
 
 `ind$nommpio <- tolower(ind$nommpio); `
 `ind$nommpio <- stringi::stri_trans_general(ind$nommpio, 'Latin-ASCII')`
@@ -187,23 +187,71 @@ Los ids de los datos procedentes del OpenData no coincidían con los de los dato
 
 Como previamente mencionado, las variables fueron elegidas en base a capacidad informacional (cantidad de NA's) y categoría semántica (maternidad/fecundidad). Las variables a visualizar escogidas fueron por lo tantos las siguientes:
 
-`  #pcrparin (4)- Porcentaje partos institucionales`
+![Variables elegidas](https://github.com/gralgomez/latam_datathlon_2017/blob/master/images/variables.gif)
 
-  `#ttdnesti (13) - Tasa de mortalidad estimada en menores de 5 años`
+A continuación, los mapas creados. Los departamentos con zonas indicadas en gris indican que los datos no cubrian estas zonas (NAs) y por lo tanto no se pueden representar en el mapa.
 
-  `#cgrnacim (16) - Número anual de nacimientos`
+#### 1. ttdiesti (1) - Tasa de mortalidad infantil estimada
 
-  `#ctrmormt (2) - Mortalidad materna a 42 días`
+![Var1: Tasa de mortalidad infantil estimada](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var1_dep_2.png)
 
-  `#pcrperca (9) - Porcentaje de partos por personal calificado`
+![Var1: Tasa de mortalidad infantil estimada](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var1_mun.png)
 
-  `#pcrrncpn (15) - Porcentaje de nacidos vivos con cuatro o más consultas`
+La tasa de mortalidad infantil esta presente en zonas mayormente rurales y tiene una correlacion inversa con los partos institucionales. 
 
-  `#rtrmorpu (5) - Razón de mortalidad materna a 42 días`
+A nivel de municipalidad, hay mucha informacion sobre las municipalidades (id, valores) faltantes lo cual se refleja en el mapa. Las zonas rurales 'criticas' no ofrecen una informacion mas detallada sobre que municipalidades requieren de mayor atencion. 
 
-  `#ttdiesti (1) - Tasa de mortalidad infantil estimada`
-	
-A continuación, los mapas creados:
+#### 2. ctrmormt (2) - Mortalidad materna a 42 días
+
+![Var2: Mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var2_dep.png)
+
+![Var2: Mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var2_mun.png)
+
+#### 3. pcrparin (4)- Porcentaje partos institucionales
+
+ En el mapa se puede ver las diferencias de las zonas rurales y las urbanas. A nivel de estado no hay informacion presente para los varios departamentos (gris).
+
+![Var4: Porcentaje partos institucionales](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var4_dep.png)
+
+![Var4: Porcentaje partos institucionales (municipal)](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var4_mun.png)
+
+#### 4. rtrmorpu (5) - Razón de mortalidad materna a 42 días
+
+![Var5: Razón de mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var5_dep.png)
+
+#### 5. pcrperca (9) - Porcentaje de partos por personal calificado
+
+![Var9: Porcentaje de partos por personal calificado](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var9_dep.png)
+
+#### 6. ttdnesti (13) - Tasa de mortalidad estimada en menores de 5 años
+
+![Var13: Tasa de mortalidad estimada en menores de 5 años](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var13_dep.png)
+
+#### 7. pcrrncpn (15) - Porcentaje de nacidos vivos con cuatro o más consultas
+
+![Var15: Porcentaje de nacidos vivos con cuatro o más consultas](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var13_dep.png)
+
+#### 8. cgrnacim (16) - Número anual de nacimientos
+
+![Var16: Número anual de nacimientos](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var16_dep.png)
 
 
+#### Conclusiones
 
+1. Impacto positivo de la infrastructura en la mortalidad infantil y materna
+2. Necesidad de un mejor mantenimiento de datos compatibles con bases de datos estandard p.e Banco Mundial. Esto hace posible el aumento y complementacion de las base de datos local con otras fuentes de informacion.
+
+#### Consideraciones para Futuros Proyectos
+
+Con el objectivo de crear una visualización para informar a lideres y ciudadanos del estado de la salud en el pais con
+ un enfoque geografico, se podria mejorar este analisis creando una applicacion web que permita que el usuario 
+investigue por su propia cuenta diferentes variables y pueda ver como estos indicadores cambian por departamento y através
+ del tiempo. La libreria y plataforma de Shiny basada en el lenguaje R brinda los recursos necesarios para crear
+ una aplicacion como la mencionada.   
+
+Para proyectos futuros, nos gustaria también analizar y visualizar los indicadores de salud contra indicadores de inversion 
+gubernamental para entender como el gobierno puede mejor distribuir fondos para mejorar la salud del pais.
+
+#### Recomendaciones para Datos Abiertos
+Al usar la plataforma de Datos Abiertos del gobierno Colombiano, nos impresiono mucho la inversion de recursos que han
+asignado para asegurarsen de que el país se beneficie de las oportunidades que existen en las Ciencias de Datos. Recomendaríamos un enfoque mas grande el la documentacion de las fuentes de datos, explicando con mas detalle exactamente que representa cada variable, ya que fue un area donde encontramos que no teniamos toda la informacion necesaria. También es importante que al tiempo de adquirir los datos en el campo se estandarizen los nombres de los municipios y los departamentos ya que existian muchas variaciones de estos en el dataset original. 
