@@ -219,9 +219,11 @@ A nivel de municipalidad, hay mucha informacion sobre las municipalidades (id, v
 
 ![Var5: Razón de mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var5_dep.png)
 
+Se puede percibir que esta variable es inversamente proporcional a la variable anterior (pcrparin). 
+
 #### 5. pcrperca (9) - Porcentaje de partos por personal calificado
 
-![Var9: Porcentaje de partos por personal calificado](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var9_dep.png)
+![Var9: Porcentaje de partos por personal calificado](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/var9_dep.png)
 
 #### 6. ttdnesti (13) - Tasa de mortalidad estimada en menores de 5 años
 
@@ -229,7 +231,7 @@ A nivel de municipalidad, hay mucha informacion sobre las municipalidades (id, v
 
 #### 7. pcrrncpn (15) - Porcentaje de nacidos vivos con cuatro o más consultas
 
-![Var15: Porcentaje de nacidos vivos con cuatro o más consultas](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var13_dep.png)
+![Var15: Porcentaje de nacidos vivos con cuatro o más consultas](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var15_dep.png)
 
 #### 8. cgrnacim (16) - Número anual de nacimientos
 
