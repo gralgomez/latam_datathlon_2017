@@ -15,13 +15,13 @@ source('latam17.R')
 COL.m.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm2.shp')
 COL.m.coord <- fortify(COL.m.data)
 COL.map <- merge(COL.m.coord, 
-                 ind.var1, 
+                 ind.var15, 
                  by = 'id')
 # // DEPARTMENTS Map
 COL.d.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm1.shp')
 COL.d.coord <- fortify(COL.d.data)
 COL.map.d <- merge(COL.d.coord, 
-                   pop, 
+                   ind.var4.dep, 
                    by = 'id')
 
 #// Visualize
@@ -30,23 +30,22 @@ mapColDep <- ggplot() +
                inherit.aes = TRUE,
                aes(x = long, y = lat, 
                    group = group, 
-                   fill = pop, #pop/max(pop)
+                   fill = value, #value/max(value)
                    color = color),
-                #lwd=0,
-               colour ='grey24',
+              #lwd=0,
+               colour ='grey27',
                alpha = 0.95,
                size = 0.1,
                na.rm = TRUE)+
   labs(title = 'Colombia', fill = '') +
-  labs(x='',y='',title='Colombia - Poblacion 2010') +
+  labs(x='',y='',title='') +
   scale_x_continuous(limits=c(-80,-65))+
   scale_y_continuous(limits=c(-5,13)
   )
 dev.off(); 
-mapColDep + scale_fill_gradient(low='#e7e1ef', high='#dd1c77')
+mapColDep + scale_fill_gradient(low='#edfffa', high='#008e8b')
 
-#"#00c5c7", "#ff6263"/#ff6263
-#low='cyan4', high='indianred4'
-#low='#00f2de', high='#ff6263')
-#(low='#e7e1ef', high='#dd1c77')
-#(low='#fee8c8', high='#e34a33')
+#----------------------
+# (low='#e7e1ef', high='#dd1c77') - neutral
+# (low='#ffedf2', high='#ec013c') -bad
+# (low='#edfffa', high='#00da9e') -good
