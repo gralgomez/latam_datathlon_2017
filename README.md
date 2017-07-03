@@ -240,20 +240,23 @@ Se puede percibir que esta variable es inversamente proporcional a la variable a
 
 #### Conclusiones
 
-1. Impacto positivo de la infrastructura en la mortalidad infantil y materna
-2. Necesidad de un mejor mantenimiento de datos compatibles con bases de datos estandard p.e Banco Mundial. Esto hace posible el aumento y complementacion de las base de datos local con otras fuentes de informacion.
+Gracias al analisis de los datos podemos concluir que existe un impacto positivo de la infrastructura en la mortalidad infantil y materna. Todavia el numero de partos institucionales esta un poco limitado a las areas urbanas pero a la misma vez pudimos observar un alto nivel de partos con equipo calificado. Estas dos variables serian de interes para un proyecto en el futuro.
+
+#### Limitaciones de este trabajo
+
+Las mayores limitaciones de este trabajo fueron el mantenimiento de datos y el tiempo requerido para el proyecto. Un analisis de mayor profundidad requiere mayor tiempo ya que una gran parte del proyecto estuvo enfocada en el proceso inicial de la normalizacion y limpieza de datos.
+
+Para un mejor mantenimiento de datos es necesario fuentes de informacion compatibles con bases de datos estandard p.e Banco Mundial. Esto hace posible el aumento y complementacion de las base de datos local con otras fuentes de informacion. Muchas variables no pudieron ser analizadas a fondo por falta de datos o por la imposibilidad de normalizar los datos y asi complementarlos con otras fuentes de informacion.
+
 
 #### Consideraciones para Futuros Proyectos
 
-Con el objectivo de crear una visualización para informar a lideres y ciudadanos del estado de la salud en el pais con
- un enfoque geografico, se podria mejorar este analisis creando una applicacion web que permita que el usuario 
-investigue por su propia cuenta diferentes variables y pueda ver como estos indicadores cambian por departamento y através
- del tiempo. La libreria y plataforma de Shiny basada en el lenguaje R brinda los recursos necesarios para crear
- una aplicacion como la mencionada.   
+Con el objectivo de crear una visualización para informar a lideres y ciudadanos del estado de la salud en el pais con un enfoque geografico, se podria mejorar este analisis creando una applicacion web que permita que el usuario 
+investigue por su propia cuenta diferentes variables y pueda ver como estos indicadores cambian por departamento y através del tiempo. La libreria y plataforma de Shiny basada en el lenguaje R brinda los recursos necesarios para crear una aplicacion como la mencionada.   
 
-Para proyectos futuros, nos gustaria también analizar y visualizar los indicadores de salud contra indicadores de inversion 
-gubernamental para entender como el gobierno puede mejor distribuir fondos para mejorar la salud del pais.
+Para proyectos futuros, nos gustaria también analizar y visualizar los indicadores de salud contra indicadores de inversion gubernamental para entender como el gobierno puede mejor distribuir fondos para mejorar la salud del pais.
 
 #### Recomendaciones para Datos Abiertos
+
 Al usar la plataforma de Datos Abiertos del gobierno Colombiano, nos impresiono mucho la inversion de recursos que han
 asignado para asegurarsen de que el país se beneficie de las oportunidades que existen en las Ciencias de Datos. Recomendaríamos un enfoque mas grande el la documentacion de las fuentes de datos, explicando con mas detalle exactamente que representa cada variable, ya que fue un area donde encontramos que no teniamos toda la informacion necesaria. También es importante que al tiempo de adquirir los datos en el campo se estandarizen los nombres de los municipios y los departamentos ya que existian muchas variaciones de estos en el dataset original. 
