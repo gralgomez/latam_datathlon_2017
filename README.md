@@ -240,7 +240,7 @@ Se puede percibir que esta variable es inversamente proporcional a la variable a
 
 #### Conclusiones
 
-Gracias al analisis de los datos podemos concluir que existe un impacto positivo de la infrastructura en la mortalidad infantil y materna. Todavia el numero de partos institucionales esta un poco limitado a las areas urbanas pero a la misma vez pudimos observar un alto nivel de partos con equipo calificado. Estas dos variables serian de interes para un proyecto en el futuro.
+Gracias al analisis de los datos podemos concluir que existe un impacto positivo de la infrastructura en la mortalidad infantil y materna. Todavia el numero de partos institucionales esta un poco limitado a las areas urbanas pero a la misma vez pudimos observar un alto nivel de partos con equipo calificado. Estas dos variables serian de interes para un proyecto en el futuro. Gracias a la visualizacion de los datos y a pesar de las limitaciones de este trabajo pudimos obtener un rapido entendimiento de la situacion de la salud materna en Colombia e identificar posibles departamentos y zonas criticas p.e el departamento de Choco y/o el Amazonas. Esperamos que estos graficos ayuden al personal que este familiarizados con este campo a una mejor interpretacion de los resultados y feedback en posible desarrollo de este proyecto.
 
 #### Limitaciones de este trabajo
 
