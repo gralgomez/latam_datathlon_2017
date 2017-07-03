@@ -20,21 +20,32 @@ COL.map <- merge(COL.m.coord,
 COL.d.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm1.shp')
 COL.d.coord <- fortify(COL.d.data)
 COL.map.d <- merge(COL.d.coord, 
-                   ind.var1, 
+                   ind.var1.dep, 
                    by = 'id')
 
 #// Visualize
 mapColDep <- ggplot() +
   geom_polygon(data = COL.map.d,
                inherit.aes = TRUE,
-               aes(x = long, y = lat, group = group, fill = value),
-               colour ='white',
+               aes(x = long, y = lat, 
+                   group = group, 
+                   fill = value,
+                   color = color),
+                #lwd=0,
+               colour ='grey24',
+               alpha = 0.95,
                size = 0.1,
                na.rm = TRUE)+
   labs(title = 'Colombia', fill = '') +
-  labs(x='',y='',title='Colombia') +
+  labs(x='',y='',title='Colombia - Tasa de mortalidad infantil estimada') +
   scale_x_continuous(limits=c(-80,-65))+
   scale_y_continuous(limits=c(-5,13)
   )
+dev.off(); 
+mapColDep + scale_fill_gradient(low='#e7e1ef', high='#dd1c77')
 
-dev.off(); mapColDep
+#"#00c5c7", "#ff6263"/#ff6263
+#low='cyan4', high='indianred4'
+#low='#00f2de', high='#ff6263')
+#(low='#e7e1ef', high='#dd1c77')
+#(low='#fee8c8', high='#e34a33')
