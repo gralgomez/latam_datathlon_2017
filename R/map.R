@@ -15,7 +15,7 @@ source('latam17.R')
 COL.m.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm2.shp')
 COL.m.coord <- fortify(COL.m.data)
 COL.map <- merge(COL.m.coord, 
-                 ind.var15, 
+                 ind.var4, 
                  by = 'id')
 # // DEPARTMENTS Map
 COL.d.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm1.shp')

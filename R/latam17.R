@@ -174,7 +174,6 @@ ind.var2 <- subset(ind.rshp, ind.rshp$idindicador == 'ctrmormt')
   # NO iDs
 # VAR 9 ----------------------------------------------------------------------
   ind.var9 <- subset(ind.rshp, ind.rshp$idindicador == 'pcrperca')
-  ind.var9 <- subset(ind.var9, ind.var9$year == 2010)
   # Aggregate by state: (State ID -5)
   ind.var9.dep <- aggregate(ind.var9[,c(7)], list(ind.var9$iddepto), mean)
   colnames(ind.var9.dep)[1] <- 'id'
