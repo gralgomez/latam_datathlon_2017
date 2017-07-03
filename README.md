@@ -197,15 +197,15 @@ A continuación, los mapas creados. Los departamentos con zonas indicadas en gri
 
 ![Var1: Tasa de mortalidad infantil estimada](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var1_mun.png)
 
-La tasa de mortalidad infantil esta presente en zonas mayormente rurales y tiene una correlacion inversa con los partos institucionales. 
-
-A nivel de municipalidad, hay mucha informacion sobre las municipalidades (id, valores) faltantes lo cual se refleja en el mapa. Las zonas rurales 'criticas' no ofrecen una informacion mas detallada sobre que municipalidades requieren de mayor atencion. 
+La tasa de mortalidad infantil esta presente en zonas mayormente rurales y tiene una correlacion inversa con los partos institucionales. La mayor taza de mortalidad infantil en 2010 fue documentada en el Amazonas. A nivel de municipalidad, hay mucha informacion sobre las municipalidades (id, valores) faltantes lo cual se refleja en el mapa. Las zonas rurales 'criticas' no ofrecen una informacion mas detallada sobre que municipalidades requieren de mayor atencion. Esto seria foco para el futuro de este proyecto.
 
 #### 2. ctrmormt (2) - Mortalidad materna a 42 días
 
 ![Var2: Mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var2_dep.png)
 
 ![Var2: Mortalidad materna a 42 días](https://github.com/gralgomez/latam_datathlon_2017/blob/master/R/Var2_mun.png)
+
+Esta variable representa la taza de mortalidad materna (/1000) pero los valores varian cuando se visualiza el mapa a nivel de municipalidad. Las variables 2 y 5 estan relacionadas sin embargo a la hora de visualizarlas muestran diferencias entre que departamentos son zonas criticas. Varias variables vienen de la misma fuente.
 
 #### 3. pcrparin (4)- Porcentaje partos institucionales
 
