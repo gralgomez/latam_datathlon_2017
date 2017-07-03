@@ -21,18 +21,18 @@ COL.map <- merge(COL.m.coord,
 COL.d.data <- readShapeSpatial('~/Documents/GitHub/latam_datathlon_2017/GIS_data/COL_adm_shp/COL_adm1.shp')
 COL.d.coord <- fortify(COL.d.data)
 COL.map.d <- merge(COL.d.coord, 
-                   ind.var4.dep, 
+                   ind.var9.dep, 
                    by = 'id')
 
 #// Visualize
 mapColDep <- ggplot() +
-  geom_polygon(data = COL.map.d,
+  geom_polygon(data = COL.map,
                inherit.aes = TRUE,
                aes(x = long, y = lat, 
                    group = group, 
                    fill = value, #value/max(value)
                    color = color),
-              #lwd=0,
+               lwd=0,
                colour ='grey27',
                alpha = 0.95,
                size = 0.1,
