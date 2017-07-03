@@ -97,7 +97,9 @@ pop$Codigo[pop$Departamento == 'bogota'] = 14
 #merge bogota + cundinamarca
 pop <- pop[,c(1,3,4)]
 pop <- aggregate(pop$popvalue, by = list(pop$Codigo), FUN = sum)
-colnames(pop)[1] <- 'id' ; colnames(pop)[2] <- 'pop' 
+colnames(pop)[1] <- 'id' 
+pop$id = pop$id -1
+colnames(pop)[2] <- 'pop' 
 
 #//Merge pop to ind.rshp
 #merge.data.frame(ind.rshp)
